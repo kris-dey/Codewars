@@ -1,0 +1,14 @@
+public class DnaStrand {
+  public static String makeComplement(String dna) {
+    char[] c = dna.toCharArray();
+    for(int i=0; i<dna.length() ;i++){
+      if(c[i]=='A') c[i]='T';
+      else if(c[i]=='T') c[i]='A';
+      else if(c[i]=='C') c[i]='G';
+      else if(c[i]=='G') c[i]='C';
+     }
+     String newDna = new String( c );
+     return newDna;
+     
+  }
+}
