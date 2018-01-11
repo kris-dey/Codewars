@@ -1,0 +1,12 @@
+public class Maskify {
+    public static String maskify(String str) {
+        
+        char[] c = str.toCharArray();
+        for( int i = str.length(), count=0; i>=0; i--){
+         count++;
+         if(count>5) c[i]='#';
+        }
+        String newStr = new String( c );
+        return newStr;
+    }
+}
