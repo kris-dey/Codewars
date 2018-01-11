@@ -1,0 +1,23 @@
+public class Line {
+  public static String Tickets(int[] peopleInLine)
+  {
+        
+        String r = "YES";
+        int[] notes = new int[3];
+        for(int i =0; i< peopleInLine.length; i++){
+          if(peopleInLine[i]==25) notes[2]++;
+          else if(peopleInLine[i]==50){
+            if(notes[2]==0){ r = "NO" ; return r;}
+            notes[1]++; 
+            notes[2]--;
+          }
+          else if(peopleInLine[i]==100){
+            if(notes[2]==0 || notes[1]==0) { r = "NO" ; return r;};
+            notes[0]++;
+            notes[1]--;
+            notes[2]--;
+          }
+        }
+        return r;
+  }
+}
