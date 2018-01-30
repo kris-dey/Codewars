@@ -1,0 +1,12 @@
+public class RemoveChars {
+    public static String remove(String str) {
+        char[] chr = str.toCharArray();
+        for(int i =1; i<chr.length; i++)
+          chr[i-1] = chr[i];
+        
+        char[] chr2 = new char[chr.length-2];
+        for(int i=0;i<chr.length-2;i++) chr2[i]=chr[i];
+        String strNew = new String( chr2 );
+        return strNew;
+    }
+}
