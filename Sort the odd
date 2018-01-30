@@ -1,0 +1,33 @@
+public class Kata {
+  public static int[] sortArray(int[] array) {
+    if (array != null) {
+			int[] n = new int[array.length];
+			int count = 0, p = 0;
+			for (int index = 0; index < array.length; index++)
+				if (array[index] % 2 != 0) {
+					n[p++] = index;
+					count++;
+				}
+
+			for (int i = 0; i < count - 1; i++) {
+				int minimumIndex = n[i];
+				Boolean change = false;
+				int tempI = i + 1;
+				for (int index2 = n[i + 1]; tempI <= count&&index2!=0;) {
+					if (array[index2] < array[minimumIndex]) {
+						minimumIndex = index2;
+						change = true;
+					}
+					tempI++;
+					index2 = n[tempI];
+				}
+				if (change) {
+					int temp = array[n[i]];
+					array[n[i]] = array[minimumIndex];
+					array[minimumIndex] = temp;
+				}
+			}
+		}
+    return array;
+  }
+}
