@@ -1,0 +1,16 @@
+public class ProdFib { // must be public for codewars	
+	
+	public static long[] productFib(long prod) {
+    long f1 = 1, f2 = 1, f3 = 0;
+    while((f1*f2)<prod){
+      f3 = f2 + f1;
+      f1 = f2;
+      f2 = f3;
+    }
+    long[] l = {f1,f2,0}; 
+    if((f1*f2)==prod) l[2]=1; 
+		else l[2]=0;
+    
+    return l;
+   }
+}
