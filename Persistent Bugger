@@ -1,0 +1,19 @@
+class Persist {
+	public static int persistence(long n) {
+		int count = 0;
+    long s=n,i,p=1;
+    if (n<=9) return 0;
+    do{  
+      p=1;
+      while(n>0){
+        i=n%10;    
+        p=p*i;
+        n=n/10;
+      }
+      n=p;
+      ++count;
+    }while(p>=9);
+    
+    return count;
+	}
+}
